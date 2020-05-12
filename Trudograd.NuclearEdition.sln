@@ -1,0 +1,45 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29230.61
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Trudograd.NuclearEdition", "Trudograd.NuclearEdition\Trudograd.NuclearEdition.csproj", "{747B819B-6743-454A-9224-480D0045C662}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{A0980C68-22EC-428B-9BC4-920E70BB4C75}"
+	ProjectSection(SolutionItems) = preProject
+		.gitattributes = .gitattributes
+		.gitignore = .gitignore
+		LICENSE = LICENSE
+		README.md = README.md
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "References", "References", "{D4AE6F1E-7869-4954-B6CE-E6FAC795141D}"
+	ProjectSection(SolutionItems) = preProject
+		References\pdb2mdb.exe = References\pdb2mdb.exe
+		References\pdb2mdb_LICENSE.txt = References\pdb2mdb_LICENSE.txt
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Trudograd.Debugger", "Trudograd.Debugger\Trudograd.Debugger.csproj", "{45AA86BB-8FFF-47F1-BF1B-285F04C4076B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{747B819B-6743-454A-9224-480D0045C662}.Debug|x64.ActiveCfg = Debug|x64
+		{747B819B-6743-454A-9224-480D0045C662}.Debug|x64.Build.0 = Debug|x64
+		{747B819B-6743-454A-9224-480D0045C662}.Release|x64.ActiveCfg = Release|x64
+		{747B819B-6743-454A-9224-480D0045C662}.Release|x64.Build.0 = Release|x64
+		{45AA86BB-8FFF-47F1-BF1B-285F04C4076B}.Debug|x64.ActiveCfg = Debug|x64
+		{45AA86BB-8FFF-47F1-BF1B-285F04C4076B}.Debug|x64.Build.0 = Debug|x64
+		{45AA86BB-8FFF-47F1-BF1B-285F04C4076B}.Release|x64.ActiveCfg = Release|x64
+		{45AA86BB-8FFF-47F1-BF1B-285F04C4076B}.Release|x64.Build.0 = Release|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1A4191F0-2FB2-4C77-946D-572B4C84BBD6}
+	EndGlobalSection
+EndGlobal

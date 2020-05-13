@@ -2,27 +2,23 @@
 Modification for the game Atom RPG Trudograd
 
 # Install
-1. Unpack [launcher](https://yadi.sk/d/knyeJOGJ4-OMXA) archive to the **game folder**
-2. Unpack [mod](https://yadi.sk/d/b0ZM1W-sveuJSw) archive to the %AppData%\..\LocalLow\AtomTeam\Atom_Trudograd\
+1. Unpack launcher archive to the **game folder**
+2. Unpack mod archive to the %AppData%\..\LocalLow\AtomTeam\Atom_Trudograd\
 
 # Build
 1. Open Trudograd.NuclearEdition.csproj via text editor
-2. Change "C:\Git\C#\Trudograd.NuclearEdition\" to your own project path
-3. Change "..\..\..\..\Users\Admin\AppData\LocalLow\AtomTeam\Atom_Trudograd\Mods\NuclearEdition\" to your own %AppData%\..\LocalLow\AtomTeam\Atom_Trudograd\Mods\NuclearEdition\ path
-4. Build in Visual Studio 2019 / JetBrains Rider
+2. Change hardcoded paths to your own
+3. Build in Visual Studio 2019 / JetBrains Rider
 
 # Todo
 1. Remove hardcoded paths
 
-# Feautures
-1. Better highlight locked containers and doors
+# Features
+- [Better Bombagan](https://github.com/Albeoris/Trudograd.NuclearEdition/wiki/Features-Bombagan) controls
+- [Better highlight](https://github.com/Albeoris/Trudograd.NuclearEdition/wiki/Features-HUD#better-highlight-locked-containers-and-doors) locked containers and doors
+- [Auto-lockpick](https://github.com/Albeoris/Trudograd.NuclearEdition/wiki/Features-HUD#auto-lockpick)
 
-Changed highlight color of environment objects.
-Locked containers or doors - Violet.
-
-2. Auto-lockpick
-
-Hold Alt (Highlight) and click on a locked container or door to send a character with maximum skill of lock picking.
+Details [here](https://github.com/Albeoris/Trudograd.NuclearEdition/wiki)
 
 # Current loader
 

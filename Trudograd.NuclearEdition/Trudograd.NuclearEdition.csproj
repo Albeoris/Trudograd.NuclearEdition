@@ -12,7 +12,7 @@
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <TargetFrameworkProfile>
     </TargetFrameworkProfile>
-    <FrameworkPathOverride>C:\Git\C#\Trudograd.NuclearEdition\References</FrameworkPathOverride>
+    <FrameworkPathOverride>W:\Steam\steamapps\common\ATOM RPG Trudograd\Trudograd_Win64_Data\Managed</FrameworkPathOverride>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
   </PropertyGroup>
@@ -46,11 +46,20 @@
     <Reference Include="AtomGame" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
-    <Reference Include="UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
-      <HintPath>..\References\UnityEngine.CoreModule.dll</HintPath>
-    </Reference>
+    <Reference Include="UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null"/>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Configuration\Configuration.cs" />
+    <Compile Include="Configuration\IO\ConfigurationSectionAttribute.cs" />
+    <Compile Include="Configuration\IO\ConfigurationSerializer.cs" />
+    <Compile Include="Configuration\IO\ConfigurationValueAttribute.cs" />
+    <Compile Include="Configuration\Sections\BombaganConfiguration.cs" />
+    <Compile Include="Configuration\Sections\RootConfiguration.cs" />
+    <Compile Include="Environment\ModDirectoryWatcher.cs" />
+    <Compile Include="Environment\ModEnvironment.cs" />
+    <Compile Include="Framework\ExtensionsDelegate.cs" />
+    <Compile Include="Framework\NotDisposableStream.cs" />
+    <Compile Include="Framework\ProxyStream.cs" />
     <Compile Include="HUD\BattleHUD\PinnedCharacterPosition.cs" />
     <Compile Include="HUD\BattleHUD\TargetHitHud.cs" />
     <Compile Include="HUD\BattleHUD\TargetHitHudCollection.cs" />
@@ -58,6 +67,9 @@
     <Compile Include="HUD\BattleHUD\VisibleTargetHud.cs" />
     <Compile Include="HUD\FieldHUD\AutoLockpick_Patches.cs" />
     <Compile Include="HUD\WorldMapHUD\FastTravelingPatches.cs" />
+    <Compile Include="Patches\Bombagan\ABBGHUD_OnEndAction.cs" />
+    <Compile Include="Patches\Bombagan\ABBGHUD_OnMouseDown.cs" />
+    <Compile Include="Patches\Bombagan\ProcessOpponentInputAction_OnEndAction.cs" />
     <Compile Include="Patches\ChestComponent_OpenLockerAction_Do.cs" />
     <Compile Include="Patches\ChestComponent_OpenLockerAction_DoTranspiler.cs" />
     <Compile Include="Patches\ChestComponent_Use.cs" />
@@ -78,6 +90,7 @@
     <Compile Include="Proxies\PlayerHUD_Proxy.cs" />
     <Compile Include="HUD\BattleHUD\TargetHitInfo_Patches.cs" />
     <Compile Include="HUD\FieldHUD\LootRadiusPatches.cs" />
+    <Compile Include="Utils\BackgroundThreadAttribute.cs" />
     <Compile Include="Utils\ExtensionMethodsList.cs" />
     <Compile Include="Utils\Expressions.cs" />
     <Compile Include="HUD\BarterHUD\ExtendedBarterHUD.cs" />
@@ -88,6 +101,7 @@
     <Compile Include="Utils\InstanceFieldAccessor.cs" />
     <Compile Include="Utils\InstanceMethodAccessor.cs" />
     <Compile Include="Utils\StaticFieldAccessor.cs" />
+    <Compile Include="Utils\The.cs" />
     <Compile Include="Utils\TypeCache.cs" />
     <Compile Include="HUD\BarterHUD\InventoryOwners\VehicleInventory.cs" />
   </ItemGroup>

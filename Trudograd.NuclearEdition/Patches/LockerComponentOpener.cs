@@ -31,7 +31,6 @@ namespace Trudograd.NuclearEdition
             }
 
             Int32 maxLockpick = character.Character.Stats.Lockpick;
-            Boolean hasSkilledTeammate = false;
             
             foreach (CharacterComponent teammate in Game.World.GetAllTeamMates())
             {

@@ -25,6 +25,9 @@ namespace Trudograd.NuclearEdition
                     DestroyImmediate(this);
                     return;
                 }
+
+                LoadConfiguration();
+                
                 Harmony harmony = new Harmony("https://github.com/Albeoris/Trudograd.NuclearEdition");
                 harmony.PatchAll(Assembly.GetExecutingAssembly());
 
@@ -34,6 +37,11 @@ namespace Trudograd.NuclearEdition
             {
                 Debug.Log($"[{nameof(NuclearEdition)}] Failed to patch via Harmony. Error: {ex}");
             }
+        }
+
+        private static void LoadConfiguration()
+        {
+            BombaganConfiguration s = Configuration.Bombagan;
         }
 
         // void Update()

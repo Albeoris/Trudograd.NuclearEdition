@@ -70,7 +70,17 @@ namespace Trudograd.NuclearEdition
                         goto onError;
                     }
 
-                    Object convertedValue = Convert.ChangeType(value, property.PropertyType, CultureInfo.InvariantCulture);
+                    Object convertedValue;
+                    if (property.PropertyType.IsEnum)
+                    {
+                        Int64 number = Int64.Parse(value, CultureInfo.InvariantCulture);
+                        convertedValue = Enum.ToObject(property.PropertyType, number);
+                    }
+                    else
+                    {
+                        convertedValue = Convert.ChangeType(value, property.PropertyType, CultureInfo.InvariantCulture);
+                    }
+
                     property.SetValue(instance, convertedValue);
                     continue;
                 }
@@ -134,6 +144,8 @@ namespace Trudograd.NuclearEdition
             String formattedValue;
             if (value is Boolean b)
                 formattedValue = b ? "true" : "false";
+            else if (value is Enum e)
+                formattedValue = Convert.ToInt64(e).ToString(CultureInfo.InvariantCulture);
             else
                 formattedValue = Convert.ToString(value, CultureInfo.InvariantCulture);
 

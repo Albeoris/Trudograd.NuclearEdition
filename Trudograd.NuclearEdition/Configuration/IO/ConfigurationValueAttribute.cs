@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Globalization;
 
 namespace Trudograd.NuclearEdition
 {
@@ -11,6 +12,12 @@ namespace Trudograd.NuclearEdition
         public ConfigurationValueAttribute(String value, String description)
         {
             Value = value;
+            Description = description;
+        }
+        
+        public ConfigurationValueAttribute(Object value, String description)
+        {
+            Value = value is Enum ? Convert.ToInt64(value).ToString(CultureInfo.InvariantCulture) : value.ToString();
             Description = description;
         }
     }

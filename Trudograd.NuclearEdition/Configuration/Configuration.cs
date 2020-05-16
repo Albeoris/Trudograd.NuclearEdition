@@ -11,6 +11,7 @@ namespace Trudograd.NuclearEdition
         public static String ConfigurationFilePath { get; }
 
         public static BombaganConfiguration Bombagan => _instance.Bombagan;
+        public static DialogConfiguration Dialog => _instance.Dialog;
 
         static Configuration()
         {

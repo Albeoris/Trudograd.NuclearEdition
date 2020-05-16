@@ -46,7 +46,7 @@
     <Reference Include="AtomGame" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
-    <Reference Include="UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null"/>
+    <Reference Include="UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Configuration\Configuration.cs" />
@@ -54,6 +54,7 @@
     <Compile Include="Configuration\IO\ConfigurationSerializer.cs" />
     <Compile Include="Configuration\IO\ConfigurationValueAttribute.cs" />
     <Compile Include="Configuration\Sections\BombaganConfiguration.cs" />
+    <Compile Include="Configuration\Sections\DialogConfiguration.cs" />
     <Compile Include="Configuration\Sections\RootConfiguration.cs" />
     <Compile Include="Environment\ModDirectoryWatcher.cs" />
     <Compile Include="Environment\ModEnvironment.cs" />
@@ -73,6 +74,9 @@
     <Compile Include="Patches\ChestComponent_OpenLockerAction_Do.cs" />
     <Compile Include="Patches\ChestComponent_OpenLockerAction_DoTranspiler.cs" />
     <Compile Include="Patches\ChestComponent_Use.cs" />
+    <Compile Include="Patches\Dialog\DialogAnswerNode_Prepare.cs" />
+    <Compile Include="Patches\Dialog\AnswerChanceFormatter.cs" />
+    <Compile Include="Patches\Dialog\EncounterAnswerNode_Prepare.cs" />
     <Compile Include="Patches\DoorComponent_OpenLockerAction_Do.cs" />
     <Compile Include="Patches\DoorComponent_OpenLockerAction_DoTranspiler.cs" />
     <Compile Include="Patches\DoorComponent_Use.cs" />
@@ -100,6 +104,7 @@
     <Compile Include="Utils\HarmonyPrefixResult.cs" />
     <Compile Include="Utils\InstanceFieldAccessor.cs" />
     <Compile Include="Utils\InstanceMethodAccessor.cs" />
+    <Compile Include="Utils\PersistentRandom.cs" />
     <Compile Include="Utils\StaticFieldAccessor.cs" />
     <Compile Include="Utils\The.cs" />
     <Compile Include="Utils\TypeCache.cs" />

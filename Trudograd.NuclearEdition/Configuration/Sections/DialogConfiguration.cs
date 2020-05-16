@@ -6,7 +6,8 @@ namespace Trudograd.NuclearEdition
     public sealed class DialogConfiguration
     {
         [ConfigurationValue(DialogChanceRepresentation.DoNotDisplay, "[default] chance will not be indicated")]
-        [ConfigurationValue(DialogChanceRepresentation.Color, "chance will be indicated by color highlighting")]
+        [ConfigurationValue(DialogChanceRepresentation.Segments, "chance will be indicated by color segments")]
+        [ConfigurationValue(DialogChanceRepresentation.Gradient, "chance will be indicated by color gradient")]
         [ConfigurationValue(DialogChanceRepresentation.Percent, "chance will be indicated as a percentage")]
         [ConfigurationValue(DialogChanceRepresentation.Value, "exact requirements will be indicated")]
         public DialogChanceRepresentation DisplayChanceSuccess { get; set; }
@@ -21,8 +22,9 @@ namespace Trudograd.NuclearEdition
     public enum DialogChanceRepresentation
     {
         DoNotDisplay = 0,
-        Color = 1,
-        Percent = 2,
-        Value = 3
+        Segments = 1,
+        Gradient = 2,
+        Percent = 3,
+        Value = 4
     }
 }

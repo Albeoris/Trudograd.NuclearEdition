@@ -38,6 +38,8 @@ namespace Trudograd.NuclearEdition.Dialog
 
             if (mode == DialogChanceRepresentation.Value)
                 FormatValue(skillNode, out color, out suffix);
+            else if (mode == DialogChanceRepresentation.Segments)
+                FormatSegments(skillNode, out color);
             else
                 FormatChance(ownerId, skillNode, mode, out color, ref suffix);
 
@@ -90,11 +92,27 @@ namespace Trudograd.NuclearEdition.Dialog
 
             suffix = $" {playerValue} / {requiredValue}{ColorTagEnd}";
         }
-
-        private static void FormatChance(String ownerId, HasSkillNode hasSkillNode, DialogChanceRepresentation displayChanceMode, out Color color, ref String suffix)
+        
+        private static void FormatSegments(HasSkillNode skillNode, out Color color)
         {
-            Single playerValue = Game.World.Player.CharacterComponent.Character.Stats.GetSkill(hasSkillNode.skill);
-            Int32 requiredValue = hasSkillNode.value;
+            Single playerValue = Game.World.Player.CharacterComponent.Character.Stats.GetSkill(skillNode.skill);
+            Int32 requiredValue = skillNode.value;
+            Int32 inaccuracy = Configuration.Dialog.DisplayChanceAbsoluteInaccuracy + Configuration.Dialog.DisplayChanceRelativeInaccuracy * requiredValue / 100;
+            Int32 minValue = requiredValue - inaccuracy;
+            Int32 maxValue = requiredValue + inaccuracy;
+
+            if (playerValue < minValue)
+                color = Color.red;
+            else if (playerValue > maxValue)
+                color = Color.green;
+            else
+                color = Color.yellow;
+        }
+
+        private static void FormatChance(String ownerId, HasSkillNode skillNode, DialogChanceRepresentation displayChanceMode, out Color color, ref String suffix)
+        {
+            Single playerValue = Game.World.Player.CharacterComponent.Character.Stats.GetSkill(skillNode.skill);
+            Int32 requiredValue = skillNode.value;
             Int32 inaccuracy = Configuration.Dialog.DisplayChanceAbsoluteInaccuracy + Configuration.Dialog.DisplayChanceRelativeInaccuracy * requiredValue / 100;
 
             // Randomize

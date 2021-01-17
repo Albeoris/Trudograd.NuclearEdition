@@ -56,11 +56,13 @@
     <Compile Include="Configuration\Sections\BombaganConfiguration.cs" />
     <Compile Include="Configuration\Sections\DialogConfiguration.cs" />
     <Compile Include="Configuration\Sections\RootConfiguration.cs" />
+    <Compile Include="Configuration\Sections\ScannerConfiguration.cs" />
     <Compile Include="Environment\ModDirectoryWatcher.cs" />
     <Compile Include="Environment\ModEnvironment.cs" />
     <Compile Include="Framework\ExtensionsDelegate.cs" />
     <Compile Include="Framework\NotDisposableStream.cs" />
     <Compile Include="Framework\ProxyStream.cs" />
+    <Compile Include="GameAPI\CharacterComponentHelper.cs" />
     <Compile Include="HUD\BattleHUD\PinnedCharacterPosition.cs" />
     <Compile Include="HUD\BattleHUD\TargetHitHud.cs" />
     <Compile Include="HUD\BattleHUD\TargetHitHudCollection.cs" />
@@ -81,7 +83,10 @@
     <Compile Include="Patches\DoorComponent_OpenLockerAction_DoTranspiler.cs" />
     <Compile Include="Patches\DoorComponent_Use.cs" />
     <Compile Include="Patches\LockerComponentOpener.cs" />
+    <Compile Include="Patches\PlayerSelection_FilterHighlightLoot.cs" />
+    <Compile Include="Patches\PlayerSelection_GetCameraAlwaysSnap.cs" />
     <Compile Include="Patches\PlayerSelection_GetColorBySelection.cs" />
+    <Compile Include="Patches\PlayerSelection_SetHighlightLoot.cs" />
     <Compile Include="Patches\PlayerSelection_ShowOutline.cs" />
     <Compile Include="Proxies\BarterHUD_Proxy.cs" />
     <Compile Include="HUD\BarterHUD\InventoryOwners\CharacterInventory.cs" />

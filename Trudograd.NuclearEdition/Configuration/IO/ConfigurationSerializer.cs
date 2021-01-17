@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
+using System.Linq;
 using System.Reflection;
 using UnityEngine;
 using Object = System.Object;
@@ -76,6 +77,16 @@ namespace Trudograd.NuclearEdition
                         Int64 number = Int64.Parse(value, CultureInfo.InvariantCulture);
                         convertedValue = Enum.ToObject(property.PropertyType, number);
                     }
+                    else if (property.PropertyType == typeof(HashSet<String>))
+                    {
+                        HashSet<String> set = new HashSet<String>();
+
+                        String[] items = value.Split(';');
+                        foreach (String item in items)
+                            set.Add(item.Trim());
+
+                        convertedValue = set;
+                    }
                     else
                     {
                         convertedValue = Convert.ChangeType(value, property.PropertyType, CultureInfo.InvariantCulture);
@@ -146,6 +157,8 @@ namespace Trudograd.NuclearEdition
                 formattedValue = b ? "true" : "false";
             else if (value is Enum e)
                 formattedValue = Convert.ToInt64(e).ToString(CultureInfo.InvariantCulture);
+            else if (value is HashSet<String> set)
+                formattedValue = String.Join("; ", set.OrderBy(i => i));
             else
                 formattedValue = Convert.ToString(value, CultureInfo.InvariantCulture);
 

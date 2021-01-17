@@ -43,7 +43,7 @@ namespace Trudograd.NuclearEdition
                 }
             }
 
-            Debug.Log($"{nameof(NuclearEdition)} Apply patch: {nameof(ChestComponent_OpenLockerAction_DoTranspiler)}. Result: {patched}");
+            Debug.Log($"[{nameof(NuclearEdition)}] Apply patch: {nameof(ChestComponent_OpenLockerAction_DoTranspiler)}. Result: {patched}");
         }
     }
 }

@@ -16,7 +16,9 @@ Modification for the game Atom RPG Trudograd
 # Features
 - [Better Bombagan](https://github.com/Albeoris/Trudograd.NuclearEdition/wiki/Features-Bombagan) controls
 - [Better Dialogs](https://github.com/Albeoris/Trudograd.NuclearEdition/wiki/Features-Dialogs)
-- [Better highlight](https://github.com/Albeoris/Trudograd.NuclearEdition/wiki/Features-HUD#better-highlight-locked-containers-and-doors) locked containers and doors
+- [Better Highlight](https://github.com/Albeoris/Trudograd.NuclearEdition/wiki/Features-HUD#better-highlight-locked-containers-and-doors) locked containers and doors
+- [Better Camera](https://github.com/Albeoris/Trudograd.NuclearEdition/wiki/Features-HUD#better-camera-control)
+- [Better Scanner](https://github.com/Albeoris/Trudograd.NuclearEdition/wiki/Features-HUD#better-scanner)
 - [Auto-lockpick](https://github.com/Albeoris/Trudograd.NuclearEdition/wiki/Features-HUD#auto-lockpick)
 
 Details [here](https://github.com/Albeoris/Trudograd.NuclearEdition/wiki)

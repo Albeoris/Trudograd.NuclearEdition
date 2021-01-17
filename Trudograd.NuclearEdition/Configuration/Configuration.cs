@@ -12,6 +12,7 @@ namespace Trudograd.NuclearEdition
 
         public static BombaganConfiguration Bombagan => _instance.Bombagan;
         public static DialogConfiguration Dialog => _instance.Dialog;
+        public static ScannerConfiguration Scanner => _instance.Scanner;
 
         static Configuration()
         {

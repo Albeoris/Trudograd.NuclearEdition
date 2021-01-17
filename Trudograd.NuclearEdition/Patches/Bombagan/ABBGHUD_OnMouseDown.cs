@@ -15,7 +15,7 @@ namespace Trudograd.NuclearEdition
     {
         static ABBGHUD_OnMouseDown()
         {
-            Debug.Log($"{nameof(NuclearEdition)} Apply patch: {nameof(ABBGHUD_OnMouseDown)}");
+            Debug.Log($"[{nameof(NuclearEdition)}] Apply patch: {nameof(ABBGHUD_OnMouseDown)}");
         }
 
         public static Boolean Prefix(ABBGHUD __instance, DragObject dragObject, Boolean leftButton)

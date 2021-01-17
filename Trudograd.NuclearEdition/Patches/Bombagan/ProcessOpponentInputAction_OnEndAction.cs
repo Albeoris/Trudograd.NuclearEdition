@@ -12,7 +12,7 @@ namespace Trudograd.NuclearEdition
     {
         static ProcessOpponentInputAction_OnEndAction()
         {
-            Debug.Log($"{nameof(NuclearEdition)} Apply patch: {nameof(ProcessOpponentInputAction_OnEndAction)}");
+            Debug.Log($"[{nameof(NuclearEdition)}] Apply patch: {nameof(ProcessOpponentInputAction_OnEndAction)}");
         }
 
         public static void Postfix(ProcessOpponentInputAction __instance)

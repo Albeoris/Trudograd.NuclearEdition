@@ -13,7 +13,7 @@ namespace Trudograd.NuclearEdition
     {
         static PlayCardAction_OnEndAction()
         {
-            Debug.Log($"{nameof(NuclearEdition)} Apply patch: {nameof(PlayCardAction_OnEndAction)}");
+            Debug.Log($"[{nameof(NuclearEdition)}] Apply patch: {nameof(PlayCardAction_OnEndAction)}");
         }
 
         public static void Postfix(PlayCardAction __instance)

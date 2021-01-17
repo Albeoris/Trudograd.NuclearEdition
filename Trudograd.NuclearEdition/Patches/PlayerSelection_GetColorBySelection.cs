@@ -13,7 +13,7 @@ namespace Trudograd.NuclearEdition
     {
         static PlayerSelection_GetColorBySelection()
         {
-            Debug.Log($"{nameof(NuclearEdition)} Apply patch: {nameof(PlayerSelection_GetColorBySelection)}");
+            Debug.Log($"[{nameof(NuclearEdition)}] Apply patch: {nameof(PlayerSelection_GetColorBySelection)}");
         }
 
         public static Boolean Prefix(PlayerSelection __instance, PlayerSelection.SelectionType type, ref Color __result)

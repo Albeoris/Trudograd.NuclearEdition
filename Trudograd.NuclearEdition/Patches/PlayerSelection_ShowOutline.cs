@@ -1,5 +1,6 @@
 ﻿using System;
 using HarmonyLib;
+using Trudograd.NuclearEdition.GameAPI;
 using UnityEngine;
 
 namespace Trudograd.NuclearEdition
@@ -13,7 +14,7 @@ namespace Trudograd.NuclearEdition
     {
         static PlayerSelection_ShowOutline()
         {
-            Debug.Log($"{nameof(NuclearEdition)} Apply patch: {nameof(PlayerSelection_ShowOutline)}");
+            Debug.Log($"[{nameof(NuclearEdition)}] Apply patch: {nameof(PlayerSelection_ShowOutline)}");
         }
 	    
         public static void Prefix(PlayerSelection __instance, EntityComponent entity, ref PlayerSelection.SelectionType type, Single intensity = 0f)
@@ -29,20 +30,7 @@ namespace Trudograd.NuclearEdition
             
             if (entity is CharacterComponent characterComponent)
             {
-                if (!characterComponent.IsDead())
-                    return;
-
-                const String key = "Trudograd.NuclearEdition.PlayerSelection_ShowOutline.OnDeadLoot";
-
-                if (!characterComponent.Character.HasKey(key))
-                {
-                    characterComponent.Character.AddKey(key);
-
-                    Boolean fromCannibal = Game.World.Player.CharacterComponent.Character.CharProto.Stats.HasPerk(CharacterStats.Perk.Cannibal);
-                    characterComponent.OnDeadLoot(fromCannibal);
-                }
-
-                if (characterComponent.Character.GetItemsCost() == 0)
+                if (CharacterComponentHelper.TryGetLootCost(characterComponent, out var cost) && cost == 0)
                     type = GrayColor;
             }
             else if (entity is ChestComponent chestComponent)

@@ -13,7 +13,7 @@ namespace Trudograd.NuclearEdition
     {
         static ChestComponent_Use()
         {
-            Debug.Log($"{nameof(NuclearEdition)} Apply patch: {nameof(ChestComponent_Use)}");
+            Debug.Log($"[{nameof(NuclearEdition)}] Apply patch: {nameof(ChestComponent_Use)}");
         }
         
         public static Boolean Prefix(ChestComponent __instance, CharacterComponent character)

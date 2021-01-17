@@ -43,7 +43,7 @@ namespace Trudograd.NuclearEdition
                 }
             }
 
-            Debug.Log($"{nameof(NuclearEdition)} Apply patch: {nameof(DoorComponent_OpenLockerAction_Do)}. Result: {patched}");
+            Debug.Log($"[{nameof(NuclearEdition)}] Apply patch: {nameof(DoorComponent_OpenLockerAction_Do)}. Result: {patched}");
         }
     }
 }

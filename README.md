@@ -1,17 +1,17 @@
 ﻿# Trudograd.NuclearEdition
 Modification for the game Atom RPG Trudograd
 
-# Install
-1. Unpack launcher archive to the **game folder**
-2. Unpack mod archive to the %AppData%\..\LocalLow\AtomTeam\Atom_Trudograd\
+## Installation:
 
-# Build
-1. Open Trudograd.NuclearEdition.csproj via text editor
-2. Change hardcoded paths to your own
-3. Build in Visual Studio 2019 / JetBrains Rider
+- Unpack [BepInEx_x64_5.4.18.0.zip](https://github.com/Albeoris/Trudograd.NuclearEdition/releases/download/v2022.01.07/BepInEx_x64_5.4.18.0.zip) into the game folder.
+- Unpack [AtomRPG_Trudograd_Mod_NuclearEdition](https://github.com/Albeoris/Trudograd.NuclearEdition/releases/download/v2022.01.07/AtomRPG_Trudograd_Mod_NuclearEdition_v2022.01.07.zip) into the game folder.
 
-# Todo
-1. Remove hardcoded paths
+If you are already using BepInEx to load other mods, use the most recent version of the loader.
+
+## Deinstalation:
+
+- To remove the mod - delete $GameFolder$\BepInEx\plugins\Trudograd.NuclearEdition.dll
+- To remove the mod launcher - delete $GameFolder$\winhttp.dll
 
 # Features
 - [Better Bombagan](https://github.com/Albeoris/Trudograd.NuclearEdition/wiki/Features-Bombagan) controls
@@ -25,45 +25,4 @@ Details [here](https://github.com/Albeoris/Trudograd.NuclearEdition/wiki)
 
 # Current loader
 
-```csharp
-        private static void LoadMods()
-		{
-			if (Logger._modsLoaded)
-			{
-				return;
-			}
-			Logger._modsLoaded = true;
-			try
-			{
-				string path = Application.persistentDataPath + "/Mods";
-				if (Directory.Exists(path))
-				{
-					foreach (string text in Directory.GetFiles(path, "*.dll", SearchOption.AllDirectories))
-					{
-						Debug.Log("Load Assembly (" + text + ")");
-						try
-						{
-							foreach (Type type in Assembly.LoadFrom(text).GetTypes())
-							{
-								if (type.Name == "ModEntryPoint")
-								{
-									Debug.Log("Found entry point (" + type.FullName + "). Initializing...");
-									GameObject gameObject = new GameObject(type.FullName);
-									gameObject.AddComponent(type);
-									Object.DontDestroyOnLoad(gameObject);
-								}
-							}
-						}
-						catch (Exception arg)
-						{
-							Debug.LogError(string.Format("Failed to load assembly {0}. Error: {1}", text, arg));
-						}
-					}
-				}
-			}
-			catch (Exception message)
-			{
-				Debug.LogError(message);
-			}
-		}
-```
+BeepInEx

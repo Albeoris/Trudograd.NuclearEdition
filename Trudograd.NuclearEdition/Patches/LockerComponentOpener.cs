@@ -32,7 +32,7 @@ namespace Trudograd.NuclearEdition
 
             Int32 maxLockpick = character.Character.Stats.Lockpick;
             
-            foreach (CharacterComponent teammate in Game.World.GetAllTeamMates())
+            foreach (CharacterComponent teammate in Game.World.GetAllTeammates())
             {
                 if (keyItem != null && teammate.Character.HasItem(keyItem))
                 {

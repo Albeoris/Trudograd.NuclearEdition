@@ -1,16 +1,24 @@
 ﻿using System;
 using System.IO;
 using System.Reflection;
+using ABBG;
+using BepInEx;
 using HarmonyLib;
 using UnityEngine;
 
 namespace Trudograd.NuclearEdition
 {
+    public static class ModConstants
+    {
+        public const String Id = "Trudograd.NuclearEdition";
+    }
+
     // This is the entry point.
     // It should be named ModEntryPoint.
     // It should be inherited from MonoBehaviour.
     // This component will be instantiated while loading mods. You control the lifetime of the object.
-    public class ModEntryPoint : MonoBehaviour
+    [BepInPlugin(ModConstants.Id, "Nuclear Edition", "2022.01.07")]
+    public class ModEntryPoint : BaseUnityPlugin
     {
         // private Single _recheckTimeSec = 0;
 
@@ -18,6 +26,8 @@ namespace Trudograd.NuclearEdition
         {
             try
             {
+                Logger.LogInfo($"Plugin {ModConstants.Id} is loaded!");
+                
                 var allInstances = FindObjectsOfType<ModEntryPoint>();
                 if (allInstances.Length > 1)
                 {
@@ -28,7 +38,7 @@ namespace Trudograd.NuclearEdition
 
                 LoadConfiguration();
                 
-                Harmony harmony = new Harmony("https://github.com/Albeoris/Trudograd.NuclearEdition");
+                Harmony harmony = new Harmony(ModConstants.Id);
                 harmony.PatchAll(Assembly.GetExecutingAssembly());
 
                 Debug.Log($"[{nameof(NuclearEdition)}] Successfully patched via Harmony.");
